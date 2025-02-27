@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package PlayerManagementService;
+
+service PlayerManagementService {
+    
+    rpc RegisterPlayer (RegisterRequest) returns (RegisterResponse);
+
+
+    rpc GetQuiz (QuizRequest) returns (QuizResponse);
+
+
+    rpc PlayGame (GameRequest) returns (GameResponse);
+
+}
+
+message RegisterRequest {
+    int32 id = 1;
+}
+
+
+message RegisterResponse {
+    string ack = 1;
+}
+
+
+message QuizRequest {
+    int32 id = 1;
+}
+
+
+message QuizResponse {
+    string quiz = 1;
+}
+
+
+message GameRequest {
+    int32 answer = 1;
+}
+
+
+message GameResponse {
+    int32 score = 1;
+}
+
